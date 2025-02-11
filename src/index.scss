@@ -2,12 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    html, body, #root{
-        height: 100%;
+@layer base {
+    body {
+        background-color: theme("colors.slate.50");
     }
-    #root{
-        display: flex;
-        flex-direction: column;
+
+    .dark body {
+        background-color: theme("colors.zinc.900");
     }
-}
+  }
+  
