@@ -50,7 +50,7 @@ function ProjectsOverview() {
     return <Overview title="Projets" seeMore="/projects">
         <div className="flex justify-between space-x-3">
             {favorites.map((project, i) => <a href={project.link} key={i} className={`relative bg-gray-200 rounded-md aspect-video w-full flex group hover:scale-105 duration-200 transition-transform`}>
-                {project.picture && <img src={project.picture} className="absolute left-0 top-0 w-full h-full object-cover rounded-md"/>}
+                {project.picture && <img alt={project.name} src={project.picture} className="absolute left-0 top-0 w-full h-full object-cover rounded-md"/>}
                 <span className="z-10 rounded-md bg-black bg-opacity-0 shadow-md group-hover:bg-opacity-40 w-full h-full flex items-center justify-center transition-colors duration-100">
                     <span className="opacity-0 group-hover:opacity-100 text-white">{project.name}</span>
                 </span>

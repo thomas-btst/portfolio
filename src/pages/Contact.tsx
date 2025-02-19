@@ -3,6 +3,7 @@ import { faEnvelope, faLocationDot, faPhone } from "@fortawesome/free-solid-svg-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { motion } from "framer-motion"
 import { Title } from "../components/Title"
+import { ContactForm } from "../features/contact/ContactForm"
 
 interface ContactItemProps {
     title: string
@@ -69,5 +70,6 @@ export function Contact() {
                 loading="lazy"
             />
         </div>
+        <ContactForm/>
     </section>
 }
