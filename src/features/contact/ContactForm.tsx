@@ -1,6 +1,6 @@
-import { useForm, ValidationError } from "@formspree/react"
-import { useState } from "react"
-import ReCAPTCHA from "react-google-recaptcha"
+import { useForm, ValidationError } from '@formspree/react'
+import { useState } from 'react'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 export function ContactForm() {
   const [state, handleSubmit] = useForm(import.meta.env.VITE_FORMSPREE_KEY)
@@ -22,14 +22,20 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-md shadow-md bg-slate-200 flex flex-col justify-center space-y-5 p-10"
+      className="rounded-md sm:col-span-2 lg:col-span-3 shadow-md bg-slate-200 dark:bg-slate-700 flex flex-col justify-center space-y-5 p-10"
     >
       <span className="text-2xl font-bold">Formulaire</span>
       <div className="flex flex-col space-y-3">
         <label htmlFor="lastname" className="font-bold">
           Nom
         </label>
-        <input id="lastname" name="lastname" placeholder="Entrez votre nom" className="py-2 px-3 rounded-md" required />
+        <input
+          id="lastname"
+          name="lastname"
+          placeholder="Entrez votre nom"
+          className="py-2 px-3 rounded-md text-black"
+          required
+        />
       </div>
       <div className="flex flex-col space-y-3">
         <label htmlFor="firstname" className="font-bold">
@@ -40,7 +46,7 @@ export function ContactForm() {
           type="firstname"
           name="firstname"
           placeholder="Entrez votre prénom"
-          className="py-2 px-3 rounded-md"
+          className="py-2 px-3 rounded-md text-black"
           required
         />
       </div>
@@ -53,7 +59,7 @@ export function ContactForm() {
           type="email"
           name="email"
           placeholder="Entrez votre email"
-          className="py-2 px-3 rounded-md"
+          className="py-2 px-3 rounded-md text-black"
           required
         />
       </div>
@@ -62,7 +68,7 @@ export function ContactForm() {
         id="message"
         name="message"
         placeholder="Écrivez votre message ici"
-        className="grow py-2 px-3 rounded-md"
+        className="grow py-2 px-3 rounded-md text-black"
         required
       />
       <ValidationError prefix="Message" field="message" errors={state.errors} />

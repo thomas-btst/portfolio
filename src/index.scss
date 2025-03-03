@@ -3,8 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+    html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+
     body {
         background-color: theme("colors.slate.50");
+        overflow-x: hidden;
     }
 
     .dark body {

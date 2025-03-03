@@ -1,6 +1,6 @@
-import { Title } from "../components/Title"
-import { technologies } from "../constants/technologies"
-import { TechnologyButton } from "../features/technologies/TechnologyButton"
+import { Title } from '../components/Title'
+import { technologies } from '../constants/technologies'
+import { TechnologyButton } from '../features/technologies/TechnologyButton'
 
 export function TechnologiesPage() {
   return (

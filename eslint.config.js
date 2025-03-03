@@ -1,41 +1,40 @@
-import js from "@eslint/js"
-import globals from "globals"
-import reactHooks from "eslint-plugin-react-hooks"
-import reactRefresh from "eslint-plugin-react-refresh"
-import tseslint from "typescript-eslint"
-import prettierRecommended from "eslint-plugin-prettier/recommended"
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import tseslint from 'typescript-eslint'
+import prettierRecommended from 'eslint-plugin-prettier/recommended'
 
 export default tseslint.config(
-  { ignores: ["dist"] },
+  { ignores: ['dist'] },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
-    files: ["**/*.{ts,tsx}"],
+    files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
     },
     plugins: {
-      "react-hooks": reactHooks,
-      "react-refresh": reactRefresh,
+      'react-hooks': reactHooks,
+      'react-refresh': reactRefresh,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      "@typescript-eslint/no-unused-expressions": ["error", { allowShortCircuit: true }],
-      "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
+      '@typescript-eslint/no-unused-expressions': ['error', { allowShortCircuit: true }],
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     },
   },
   prettierRecommended,
   {
     rules: {
-      "no-console": "warn",
-      "prettier/prettier": [
-        "warn",
+      'prettier/prettier': [
+        'warn',
         {
-          printWidth: 120,
-          semi: false,
-          singleQuote: false,
-          trailingComma: "all",
+          singleQuote: true,
+          trailingComma: 'all',
           tabWidth: 2,
+          semi: false,
+          printWidth: 120,
         },
       ],
     },

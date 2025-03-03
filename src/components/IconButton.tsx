@@ -1,8 +1,8 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core"
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { HTMLAttributeAnchorTarget } from "react"
-import { Link } from "react-router-dom"
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { HTMLAttributeAnchorTarget } from 'react'
+import { Link } from 'react-router-dom'
 
 type ArrowButtonProps = React.PropsWithChildren<{
   to: string

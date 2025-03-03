@@ -1,6 +1,6 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { motion } from "framer-motion"
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { motion } from 'framer-motion'
 
 interface ContactItemProps {
   title: string
@@ -15,7 +15,7 @@ export function ContactItem({ title, href, target, text, icon }: ContactItemProp
     <motion.div
       initial={{ opacity: 0, x: 300 }}
       whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.25, ease: "easeOut" }}
+      transition={{ duration: 0.25, ease: 'easeOut' }}
     >
       <a
         href={href}

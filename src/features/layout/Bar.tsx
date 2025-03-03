@@ -1,18 +1,18 @@
-import { faEnvelopeOpen, faFileLines } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Link, useLocation } from "react-router-dom"
-import { IconProp } from "@fortawesome/fontawesome-svg-core"
-import profile from "../../assets/profile.jpg"
-import { ThemeToggle } from "../ThemeToggle"
-import { HTMLAttributeAnchorTarget } from "react"
+import { faEnvelopeOpen, faFileLines } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link, useLocation } from 'react-router-dom'
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import profile from '../../assets/profile.jpg'
+import { ThemeToggle } from '../ThemeToggle'
+import { HTMLAttributeAnchorTarget } from 'react'
 
 export function Bar({ routes }: { routes: { pth: string; name: string }[] }) {
   const currentPath = useLocation().pathname
 
   const links = Array<[IconProp, string, string, HTMLAttributeAnchorTarget?]>(
     // [faPhone, 'Téléphone', 'tel:+33782713311'],
-    [faEnvelopeOpen, "Email", "mailto:thomas.chadecima@gmail.com"],
-    [faFileLines, "CV", "/cv.pdf", "_blank"],
+    [faEnvelopeOpen, 'Email', 'mailto:thomas.chadecima@gmail.com'],
+    [faFileLines, 'CV', '/cv.pdf', '_blank'],
   ).map((link) => ({
     img: link[0],
     alt: link[1],
@@ -39,13 +39,13 @@ export function Bar({ routes }: { routes: { pth: string; name: string }[] }) {
               <Link
                 to={route.pth}
                 className={`relative uppercase font-bold text-sm tracking-wide transition-colors duration-300 
-                                ${route.pth === currentPath ? "text-purple-900 dark:text-purple-300" : ""}
+                                ${route.pth === currentPath ? 'text-purple-900 dark:text-purple-300' : ''}
                                 hover:text-purple-900 dark:hover:text-purple-300 group`}
               >
                 {route.name}
                 <span
                   className={`absolute left-1/2 -bottom-1 h-0.5 bg-purple-900 dark:bg-purple-300 transition-all duration-300 rounded-full 
-                                ${route.pth === currentPath ? "w-full" : "w-0 group-hover:w-full"} 
+                                ${route.pth === currentPath ? 'w-full' : 'w-0 group-hover:w-full'} 
                                 transform -translate-x-1/2`}
                 />
               </Link>

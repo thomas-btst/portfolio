@@ -1,5 +1,5 @@
-import notFound from "../assets/not_found.png"
-import { IconButton } from "../components/IconButton"
+import notFound from '../assets/not_found.png'
+import { IconButton } from '../components/IconButton'
 
 export function NotFound() {
   return (

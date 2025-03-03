@@ -1,4 +1,4 @@
-import { TechnologyType } from "../../constants/technologies"
+import { TechnologyType } from '../../constants/technologies'
 
 interface TechnologyButtonProps {
   techno: TechnologyType
@@ -6,7 +6,7 @@ interface TechnologyButtonProps {
 
 export function TechnologyButton({ techno }: TechnologyButtonProps) {
   return (
-    <a href={techno.link} target="_blank" className={`group relative`}>
+    <a href={techno.link} target="_blank" className={`group relative w-fit inline-block align-middle`}>
       <img
         src={techno.icon}
         alt={techno.name}

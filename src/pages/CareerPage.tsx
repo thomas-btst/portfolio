@@ -1,5 +1,5 @@
-import { experiences, formations } from "../constants/timeline"
-import { Timeline } from "../features/Timeline"
+import { experiences, formations } from '../constants/timeline'
+import { Timeline } from '../features/Timeline'
 
 export function CareerPage() {
   return (

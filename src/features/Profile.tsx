@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom"
-import { Badge } from "../components/Badge"
-import { PropsWithChildren } from "react"
-import { motion } from "framer-motion"
-import profile from "../assets/profile.jpg"
-import { IconButton } from "../components/IconButton"
-import { faDownload } from "@fortawesome/free-solid-svg-icons"
-import { Underline } from "../components/Underline"
-import { technologies, TechnologyKey } from "../constants/technologies"
-import { projects } from "../constants/projects"
-import { TechnologyButton } from "./technologies/TechnologyButton"
+import { Link } from 'react-router-dom'
+import { Badge } from '../components/Badge'
+import { PropsWithChildren } from 'react'
+import { motion } from 'framer-motion'
+import profile from '../assets/profile.jpg'
+import { IconButton } from '../components/IconButton'
+import { faDownload } from '@fortawesome/free-solid-svg-icons'
+import { Underline } from '../components/Underline'
+import { technologies, TechnologyKey } from '../constants/technologies'
+import { projects } from '../constants/projects'
+import { TechnologyButton } from './technologies/TechnologyButton'
 
 type OverviewProps = PropsWithChildren<{
   title: string
@@ -86,9 +86,9 @@ function ProjectsOverview() {
 export function Profile() {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ ease: "easeInOut", duration: 0.5 }}
+      initial={{ opacity: 0, y: 200 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ ease: 'easeInOut', duration: 0.5 }}
       className="flex flex-col items-center bg-white dark:bg-zinc-800 bg-opacity-75 pt-4 pb-8 px-14 min-w-96 shadow-md space-y-7 rounded-lg text-nowrap"
     >
       <div className="pb-1 flex space-x-2">
@@ -101,7 +101,7 @@ export function Profile() {
         <span className="italic text-gray-700 dark:text-gray-300">Etudiant en Informatique</span>
       </div>
       <div className="space-y-6">
-        <TechnologiesOverview technologyKeys={["spring-boot", "nestjs", "react", "git", "bash", "mongodb"]} />
+        <TechnologiesOverview technologyKeys={['spring-boot', 'nestjs', 'react', 'git', 'bash', 'mongodb']} />
         <ProjectsOverview />
       </div>
       <div className="pt-2">
