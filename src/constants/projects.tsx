@@ -189,7 +189,7 @@ export const projects = new Array<ProjectValue>(
     dates: {
       begin: new Date(2024, -1),
     },
-    link: 'https://bookstore.thomas-btst.fr',
+    link: 'https://bookstore.thomas-batista.fr',
     picture: bookstorePicture,
     description: 'Ce projet consistait à développer un site web de vente en ligne de livres en utilisant Laravel.',
     page: (
@@ -270,7 +270,7 @@ export const projects = new Array<ProjectValue>(
       end: new Date(2025, 1),
     },
     favorite: true,
-    link: 'https://flip-skateshop.thomas-btst.fr',
+    link: 'https://flip-skateshop.thomas-batista.fr',
     picture: flipSkateshopPicture,
     description:
       'Ce projet consistait à développer une plateforme de vente en ligne de skateboards et de pièces détachées.',
@@ -331,7 +331,7 @@ export const projects = new Array<ProjectValue>(
     dates: {
       begin: new Date(2023, -1),
     },
-    link: 'https://drinky.thomas-btst.fr',
+    link: 'https://drinky.thomas-batista.fr',
     picture: drinkyPicture,
     description:
       'Drinky est un site web permettant de visualiser et rechercher des recettes de boissons en utilisant l’API gratuite TheCocktailDB. Les utilisateurs peuvent effectuer des recherches par nom ou par catégorie.',
