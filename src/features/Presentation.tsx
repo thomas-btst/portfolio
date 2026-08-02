@@ -5,7 +5,7 @@ import { Separator } from '../components/Separator'
 import { Bold } from '../components/Bold'
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
+import { faQuoteLeft, faQuoteRight, faFileLines } from '@fortawesome/free-solid-svg-icons'
 
 function Paragraph({ children }: PropsWithChildren) {
   return (
@@ -23,6 +23,7 @@ function Paragraph({ children }: PropsWithChildren) {
 type CitationProps = PropsWithChildren<{
   author: string
   role: string
+  pdfLink?: string
 }>
 
 function CitationMore({ children }: PropsWithChildren) {
@@ -44,16 +45,28 @@ function CitationMore({ children }: PropsWithChildren) {
   )
 }
 
-function Citation({ author, role, children }: CitationProps) {
+function Citation({ author, role, pdfLink, children }: CitationProps) {
   return (
-    <Paragraph>
-      <FontAwesomeIcon icon={faQuoteLeft} className="mr-2" />
-      {children}
-      <FontAwesomeIcon icon={faQuoteRight} className="mx-2" />
-      <Bold>{author}</Bold>
-      <span className="text-lg mx-3 font-bold">-</span>
-      <span className="text-base text-gray-700 dark:text-gray-300">{role}</span>
-    </Paragraph>
+    <div className="space-y-2">
+      <Paragraph>
+        <FontAwesomeIcon icon={faQuoteLeft} className="mr-2" />
+        {children}
+        <span className="whitespace-nowrap">
+          &nbsp;
+          <FontAwesomeIcon icon={faQuoteRight} className="ml-1 mr-2" />
+        </span>
+        <Bold>{author}</Bold>
+        <span className="text-lg mx-3 font-bold">-</span>
+        <span className="text-base text-gray-700 dark:text-gray-300">{role}</span>
+      </Paragraph>
+      {pdfLink && (
+        <div className="flex justify-end pt-1">
+          <IconButton to={pdfLink} target="_blank" icon={faFileLines}>
+            Lettre PDF ({author})
+          </IconButton>
+        </div>
+      )}
+    </div>
   )
 }
 
@@ -69,7 +82,7 @@ export function Presentation() {
           </div>
         </div>
 
-        <div className="relative space-y-3">
+        <div className="relative space-y-6">
           <Paragraph>
             Bienvenue sur mon portfolio ! Je suis <Bold>Thomas BATISTA</Bold>, un étudiant en 3ème année de{' '}
             <Bold>BUT Informatique</Bold> à l'IUT d'Arles et en alternance au sein de l'entreprise Dev-id située à
@@ -89,8 +102,25 @@ export function Presentation() {
           </Paragraph>
           <Separator />
           <h2 className="text-lg font-bold">Recommandations</h2>
-          <Citation author="LESCOULIE Julien" role="CEO de Dev-id">
-            C'est avec grand plaisir que je vous recommande vivement Thomas au sein votre école.
+          
+          <Citation
+            author="GOUVARY Elise"
+            role="Tutrice d'alternance chez Covéa"
+            pdfLink="/lettre_de_recommandation_covea.pdf"
+          >
+            Je suis responsable d’applications informatiques chez Covéa et je suis la tutrice d’alternance de Thomas depuis septembre 2025.{' '}
+            <CitationMore>
+              Je lui confie des travaux informatiques très variés, nécessitant des compétences techniques, de coordination, de pilotage, ainsi qu’une bonne compréhension fonctionnelle. Thomas est capable de traiter beaucoup de sujets en parallèle, il est très autonome et montre toujours une grande motivation quelles que soient les tâches confiées. Ses productions répondent bien à nos besoins, elles sont de qualité, car il sait bien creuser les problématiques.
+            </CitationMore>{' '}
+            Je recommande vivement son profil, il saura s’intégrer grâce à son caractère sociable et son sérieux.
+          </Citation>
+
+          <Citation
+            author="LESCOULIE Julien"
+            role="CEO de Dev-id"
+            pdfLink="/lettre_de_recommandation_devid.pdf"
+          >
+            C'est avec grand plaisir que je vous recommande vivement Thomas au sein votre entreprise.{' '}
             <CitationMore>
               Ayant eu le privilège de superviser ses précédents stages et alternances chez Dev-id, je peux attester de
               son engagement et d’un bon niveau technique dans les technologies (stack) sur lesquels il a eu
@@ -103,9 +133,10 @@ export function Presentation() {
               produit. En plus de ses compétences techniques il possède d'excellentes appétences pour le travail en
               équipe. Il a toujours été collaboratif et disposé à partager ses connaissances avec ses collègues, ce qui
               a renforcé l'esprit d'équipe au sein de notre organisation.
-            </CitationMore>
+            </CitationMore>{' '}
             Thomas est une personne fiable, honnête et motivée.
           </Citation>
+          
           <div className="absolute h-full w-0.5 rounded-full bg-slate-100 dark:bg-zinc-800 -top-8 -left-8" />
           <div className="absolute h-full w-0.5 rounded-full bg-slate-100 dark:bg-zinc-800 -top-8 -right-8" />
         </div>
