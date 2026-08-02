@@ -3,14 +3,24 @@ import { TimelineStep } from '../features/Timeline'
 
 export const formations: TimelineStep[] = [
   {
+    title: "Ingénieur Logiciel",
+    place: 'IMT Atlantique, Nantes',
+    link: 'https://www.imt-atlantique.fr/fr/formation/ingenieur-apprentissage/ingenierie-logicielle',
+    date: '2025 - 2028',
+    body: (
+      <>
+        Formation d'ingénieur en alternance (<Bold>actuellement 1er de la promotion</Bold>). Spécialisation approfondie en <Bold>architecture, qualité logicielle</Bold>, <Bold>systèmes distribués</Bold>, <Bold>DevOps</Bold>, algorithmique avancée, systèmes d'exploitation et méthodologies agiles.
+      </>
+    ),
+  },
+  {
     title: 'BUT Informatique',
     place: "IUT d'Aix-Marseille, site d'Arles",
     link: 'https://iut.univ-amu.fr/fr/formations/bachelor-universitaire-de-technologie/but-informatique/but-info-arles',
     date: '2022 - 2025',
     body: (
       <>
-        Au cours de mon BUT Informatique, j'ai acquis des compétences en <Bold>développement d'applications</Bold>,
-        notamment en programmation, en conception et en gestion de projets informatiques.
+        Bachelor Universitaire de Technologie en alternance (<Bold>Major de promotion</Bold>). Acquisition de compétences solides en <Bold>développement d'applications</Bold>, conception logicielle, bases de données et gestion de projets informatiques.
       </>
     ),
   },
@@ -30,8 +40,23 @@ export const formations: TimelineStep[] = [
 
 export const experiences: TimelineStep[] = [
   {
+    title: 'Alternance Concepteur SI',
+    place: 'Covéa, Le Mans',
+    link: 'https://www.covea.com/fr',
+    date: '2025 - 2028',
+    body: (
+      <>
+        En tant que <Bold>Concepteur SI</Bold> chez Covéa, je participe à l'architecture et la conception de
+        <Bold> systèmes d'information complexes à grande échelle</Bold>. J'assure la <Bold>coordination </Bold>
+        de tâches de bout en bout, la validation des livrables ainsi que le <Bold>pilotage de projets</Bold>,
+        notamment sur le volet budgétaire. Je réalise également du <Bold>support technique de niveau 2 </Bold>
+        et des <Bold>analyses d'infrastructure et de coûts</Bold> pour guider les décisions stratégiques.
+      </>
+    ),
+  },
+  {
     title: 'Alternance Développeur Web',
-    place: 'Dev-id Marseille',
+    place: 'Dev-id, Marseille',
     link: 'https://www.dev-id.fr',
     date: '2024 - 2025',
     body: (
@@ -48,7 +73,7 @@ export const experiences: TimelineStep[] = [
   },
   {
     title: 'Stage Développeur Web',
-    place: 'Dev-id Marseille',
+    place: 'Dev-id, Marseille',
     link: 'https://www.dev-id.fr',
     date: '2024',
     body: (

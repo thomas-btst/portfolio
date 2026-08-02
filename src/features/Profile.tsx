@@ -91,9 +91,9 @@ export function Profile() {
       transition={{ ease: 'easeInOut', duration: 0.5 }}
       className="flex flex-col items-center bg-white dark:bg-zinc-800 bg-opacity-75 pt-4 pb-8 px-14 min-w-96 shadow-md space-y-7 rounded-lg text-nowrap"
     >
-      <div className="pb-1 flex space-x-2">
+      <div className="pb-1 flex justify-center gap-2 whitespace-normal text-center">
+        <FormationBadge>Ingénieur Logiciel</FormationBadge>
         <FormationBadge>BUT 3 Informatique</FormationBadge>
-        <FormationBadge>BAC Général</FormationBadge>
       </div>
       <img src={profile} alt="Profil" className="aspect-square size-40 rounded-xl transition shadow-md border border-gray-200" />
       <div className="flex flex-col items-center space-y-1">
