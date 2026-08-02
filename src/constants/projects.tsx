@@ -457,13 +457,4 @@ export const projects = new Array<ProjectValue>(
   ...props,
   competencies: new Set(competencies),
   technologies: new Set(technologies),
-}))
-// .sort((a, b) => {
-//   if (a.dates?.end === null && b.dates?.end === null)
-//     return a.dates.begin < b.dates.begin
-//   if (a.dates?.end === null)
-//     return true
-//   if (b.dates?.end === null)
-//     return false
-//   return a.dates.end < b.dates?.end
-// })
+})).sort((a, b) => (b.favorite ? 1 : 0) - (a.favorite ? 1 : 0))
