@@ -388,7 +388,7 @@ export const projects = new Array<ProjectValue>(
     id: 'fjord_desktop',
     name: 'Fjord Desktop',
     competencies: [1, 2, 3],
-    technologies: ['gtk', 'bash', 'typescript', 'sass', 'git'],
+    technologies: ['gtk', 'bash', 'typescript', 'sass', 'git', 'nix'],
     dates: {
       begin: new Date(2023, -1),
       end: false,

@@ -26,6 +26,8 @@ import opengl from '../assets/technologies/opengl.png'
 import threejs from '../assets/technologies/threejs.ico'
 import vite from '../assets/technologies/vite.svg'
 import webpack from '../assets/technologies/webpack.svg'
+import nix from '../assets/technologies/nix.svg'
+import go from '../assets/technologies/go.svg'
 
 export type TechnologyKey =
   | 'spring-boot'
@@ -56,6 +58,8 @@ export type TechnologyKey =
   | 'threejs'
   | 'vite'
   | 'webpack'
+  | 'nix'
+  | 'go'
 
 export interface TechnologyType {
   name: string
@@ -232,5 +236,17 @@ export const technologies: Record<TechnologyKey, TechnologyType> = {
     icon: webpack,
     type: 'tool',
     link: 'https://webpack.js.org/',
+  },
+  nix: {
+    name: 'Nix',
+    icon: nix,
+    type: 'language',
+    link: 'https://nix.dev/',
+  },
+  go: {
+    name: 'Go',
+    icon: go,
+    type: 'language',
+    link: 'https://go.dev/',
   },
 }

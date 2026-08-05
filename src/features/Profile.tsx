@@ -98,7 +98,7 @@ export function Profile() {
       <img src={profile} alt="Profil" className="aspect-square size-40 rounded-xl transition shadow-md border border-gray-200" />
       <div className="flex flex-col items-center space-y-1">
         <h2 className="text-2xl font-bold text-gray-950 dark:text-gray-50">Thomas BATISTA</h2>
-        <span className="italic text-gray-700 dark:text-gray-300">Etudiant en Informatique</span>
+        <span className="italic text-gray-700 dark:text-gray-300">Etudiant ingénieur en Informatique</span>
       </div>
       <div className="space-y-6">
         <TechnologiesOverview technologyKeys={['spring-boot', 'nestjs', 'react', 'git', 'bash', 'mongodb']} />
