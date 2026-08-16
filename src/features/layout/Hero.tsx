@@ -5,39 +5,8 @@ import picture from '../../assets/desktop computer-bro.svg'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
-// function Slider({
-//   name,
-//   min,
-//   max,
-//   value,
-//   setValue,
-// }: {
-//   name: string
-//   min: number
-//   max: number
-//   value: number
-//   setValue: (val: number) => void
-// }) {
-//   return (
-//     <div className="flex space-x-3 justify-between w-full">
-//       <span>{name}</span>
-//       <input type="range" min={min} max={max} value={value} onChange={(e) => setValue(+e.target.value)}></input>
-//       <span>{value}</span>
-//     </div>
-//   )
-// }
-
 export function Hero() {
   const [top, setTop] = useState(true)
-
-  // const [perspective, setPerspective] = useState(670)
-  // const [x, setX] = useState(-3)
-  // const [y, setY] = useState(-20)
-  // const [z, setZ] = useState(7)
-  // const [translateX, setTranslateX] = useState(0)
-  // const [translateY, setTranslateY] = useState(-100)
-  // const [skewY, setSkewY] = useState(-3)
-  // const [skewX, setSkewX] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,62 +21,81 @@ export function Hero() {
   }, [])
 
   return (
-    <motion.div
-      className="relative grow flex flex-col items-center justify-center px-4 py-16 md:py-32"
-      initial={{ bottom: -300 }}
-      animate={{ bottom: 0 }}
-    >
-      {/* <div className="absolute bottom-0 p-3 rounded-md bg-white space-y-4">
-        <Slider name="perspective" min={0} max={2000} value={perspective} setValue={setPerspective}/>
-        <Slider name="x" min={-100} max={100} value={x} setValue={setX}/>
-        <Slider name="y" min={-100} max={100} value={y} setValue={setY}/>
-        <Slider name="z" min={-100} max={100} value={z} setValue={setZ}/>
-        <Slider name="translateX" min={-100} max={100} value={translateX} setValue={setTranslateX}/>
-        <Slider name="translateY" min={-100} max={100} value={translateY} setValue={setTranslateY}/>
-        <Slider name="skewX" min={-100} max={100} value={skewX} setValue={setSkewX}/>
-        <Slider name="skewY" min={-100} max={100} value={skewY} setValue={setSkewY}/>
-      </div> */}
-      <img className="absolute -z-10 top-0 w-full h-full" src={picture} />
-      <div
-        className="absolute flex items-center justify-center ml-5 xl:ml-0 top-[36%] md:top-[30%] xl:top-[28%] xl:justify-between py-4 flex-col space-y-6 bg-blfue-200/70"
-        style={{
-          left: '40.3%',
-          width: '25%',
-          height: '38%',
-          transform: `perspective(670px) rotateX(-3deg) rotateY(-20deg) rotateZ(7deg) translateY(-100px) skewY(-3deg)`,
-          // transform: `perspective(${perspective}px) rotateX(${x}deg) rotateY(${y}deg) rotateZ(${z}deg) translateY(${translateY}px) translateX(${translateX}px) skewX(${skewX}deg) skewY(${skewY}deg)`,
-          transformOrigin: 'center center',
-        }}
+    <>
+      <motion.div
+        className="relative grow flex flex-col items-center justify-center px-4 py-6 md:py-12 w-full"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
       >
-        <div className="space-y-3 flex flex-col items-center">
-          <h1 className="text-4xl font-bold text-white text-center">De la conception à la réalisation</h1>
-          <span className="hidden sm:block text-xl italic font-bold text-white">Étudiant en informatique</span>
-        </div>
-        <div className="hidden xl:flex flex-wrap justify-center gap-4 pt-4 ml-20">
-          <a
-            href="#presentation"
-            className="px-6 py-3 bg-white text-purple-800 hover:bg-opacity-0 border-2 hover:text-white border-white rounded-lg font-semibold transition-all duration-100"
+        {/* 1:1 Aspect Ratio Container using native SVG viewBox scaling */}
+        <div className="relative w-full max-w-[500px] sm:max-w-[650px] md:max-w-[780px] lg:max-w-[850px] aspect-square flex items-center justify-center my-auto">
+          <svg
+            viewBox="0 0 500 500"
+            className="w-full h-full overflow-visible select-none"
           >
-            Me découvrir
-          </a>
-          <Link
-            to="/contact"
-            className="px-6 py-3 border-2 border-white text-white hover:text-purple-800 hover:bg-white rounded-lg font-semibold transition-all duration-100"
-          >
-            Me contacter
-          </Link>
+            {/* Desktop Computer Vector Artwork */}
+            <image href={picture} x="0" y="0" width="500" height="500" />
+
+            {/* ForeignObject container carrying the exact 3D Perspective Screen Overlay */}
+            <foreignObject x="0" y="0" width="500" height="500" className="overflow-visible">
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '400px',
+                  height: '250px',
+                  transform:
+                    'matrix3d(0.419367, -0.080956, 0, -0.000645, -0.062092, 0.695577, 0, 0.000069, 0, 0, 1, 0, 175.23, 79.81, 0, 1)',
+                  transformOrigin: '0 0',
+                }}
+                className="flex flex-col items-center justify-center p-6 space-y-9 text-white overflow-hidden"
+              >
+                {/* Main Content: Title & Subtitle */}
+                <div className="flex flex-col items-end space-y-2 text-right px-2">
+                  <h1 className="text-3xl font-black text-white leading-snug tracking-tight drop-shadow-md">
+                    De la conception à la réalisation
+                  </h1>
+                  <p className="text-md font-semibold text-purple-200 tracking-wide drop-shadow-xs">
+                    Ingénieur en informatique
+                  </p>
+                </div>
+
+                {/* Interactive Action Buttons */}
+                <div className="flex items-center justify-center gap-3 w-full pl-20">
+                  <a
+                    href="#presentation"
+                    className="px-5 py-2.5 bg-white text-purple-900 hover:bg-purple-100 hover:text-purple-950 font-extrabold text-sm rounded-lg shadow-lg transition-all duration-200 hover:scale-105 active:scale-95 text-nowrap flex items-center justify-center"
+                  >
+                    Me découvrir
+                  </a>
+                  <Link
+                    to="/contact"
+                    className="px-5 py-2.5 border-2 border-white text-white hover:bg-white/20 font-extrabold text-sm rounded-lg shadow-lg transition-all duration-200 hover:scale-105 active:scale-95 text-nowrap flex items-center justify-center"
+                  >
+                    Me contacter
+                  </Link>
+                </div>
+              </div>
+            </foreignObject>
+          </svg>
         </div>
-      </div>
+      </motion.div>
+
+      {/* Scroll Down Indicator */}
       <a
         href="#presentation"
-        className={`absolute px-3 rounded-full pt-4 pb-1 ${top ? 'bottom-7' : 'bottom-32 opacity-0'} transition-all duration-500 left-1/2 -translate-x-1/2`}
+        className={`fixed px-3 rounded-full pt-4 pb-1 ${top ? 'bottom-7 opacity-100' : 'bottom-32 opacity-0 pointer-events-none'} transition-all duration-500 left-1/2 -translate-x-1/2 z-30`}
       >
-        <span className="absolute inset-0 bg-white blur-xl opacity-50"></span>
-        <div className="animate-bounce flex flex-col text-lg text-black font-bold items-center z-20">
+        <span className="absolute inset-0 bg-white blur-xl opacity-50 dark:opacity-20"></span>
+        <div className="animate-bounce flex flex-col text-lg text-black dark:text-white font-bold items-center relative z-20">
           <p className="mb-2 text-sm">Découvrir</p>
-          <FontAwesomeIcon icon={faChevronDown} className="size-4 text-black" />
+          <FontAwesomeIcon icon={faChevronDown} className="size-4 text-black dark:text-white" />
         </div>
       </a>
-    </motion.div>
+    </>
   )
 }
+
+
