@@ -95,7 +95,7 @@ export function Profile() {
         <FormationBadge>BUT 3 Informatique</FormationBadge>
         <FormationBadge>BAC Général</FormationBadge>
       </div>
-      <img src={profile} alt="Profil" className="aspect-square size-32 rounded-lg transition" />
+      <img src={profile} alt="Profil" className="aspect-square size-40 rounded-xl transition shadow-md border border-gray-200" />
       <div className="flex flex-col items-center space-y-1">
         <h2 className="text-2xl font-bold text-gray-950 dark:text-gray-50">Thomas BATISTA</h2>
         <span className="italic text-gray-700 dark:text-gray-300">Etudiant en Informatique</span>
