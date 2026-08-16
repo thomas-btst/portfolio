@@ -5,12 +5,14 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import profile from '../../assets/profile.jpg'
 import { ThemeToggle } from '../ThemeToggle'
 import { HTMLAttributeAnchorTarget } from 'react'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 export function Bar({ routes }: { routes: { pth: string; name: string }[] }) {
   const currentPath = useLocation().pathname
 
   const links = Array<[IconProp, string, string, HTMLAttributeAnchorTarget?]>(
     // [faPhone, 'Téléphone', 'tel:+33782713311'],
+    [faGithub, 'Email', 'https://github.com/thomas-btst'],
     [faEnvelopeOpen, 'Email', 'mailto:thomas.chadecima@gmail.com'],
     [faFileLines, 'CV', '/cv.pdf', '_blank'],
   ).map((link) => ({
